@@ -1,0 +1,13 @@
+#include<stdio.h>
+
+    int fact (int n){
+    if(n==1) {
+        return 1;
+    }
+    return n*fact(n-1);
+    
+    }
+        void main(int argc, char*argv) {
+            int n=5;
+            printf("the factiorial of a number is %d\n", fact(n));
+}
