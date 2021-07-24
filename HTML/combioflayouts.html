@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>SUPERNATURAL POWER</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        *   {
+                box-sizing: border-box;
+            }
+            body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*-----------------------------------Slider-----------------*/
+.mySlides {display: none}
+img {vertical-align: auto;} 
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position:relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position:relative;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 9px 9px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 9px 0 0 9px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+/*----------------------------------Slider-----------------------*/
+/* Style the header */
+header {
+  background-color: #000;
+  padding: 2px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+  border: 4px solid red;
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #000;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  border: 1px solid green;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%; height: 443px; border: 0px;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%; border: 0;text-align: center;}
+
+
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+    <div class="col-12">
+    <img src="D:\ITfyMe\html\Screenshot 2021-05-29 181121.png">
+    
+
+     <body>
+
+      <div class="slideshow-container">
+      
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="D:\ITfyMe\html\Screenshot 2021-05-29 183433.png" style="width:100%">
+         <!-- <div class="text">Caption Text</div> --> 
+       </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="D:\ITfyMe\html\Screenshot 2021-05-31 141945.png" style="width:100%">
+        <!-- <div class="text">Caption Two</div> --> 
+      </div> 
+      
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="D:\ITfyMe\html\Screenshot 2021-05-31 142941.png" style="width:100%">
+        <!-- <div class="text">Caption Three</div> --> 
+       </div>  
+
+      
+      
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a> 
+      
+       </div>
+      <br>
+      
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
+      
+      <br>
+      <h1>CLUSTER</h1>
+      <p>The Originals, Vampires, Wearwolfs, Hybrids and A Witch</p>
+      <p></p>
+    </div>
+
+      <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+      </script>
+      
+      </body> 
+</div>
+<br>
+    <h2>The Originals</h2>
+<p>It is a spin-off of The Vampire Diaries and the first television series expansion of the franchise based on its parent series. The series follows vampire-werewolf hybrid Klaus Mikaelson as he and his family become embroiled in the supernatural politics of the French Quarter of New Orleans(City in Louisiana).</p>
+<p> 1.1 Mikael.
+    1.2 Esther.
+    1.3 Freya Mikaelson.
+    1.4 Finn Mikaelson.
+    1.5 Elijah Mikaelson.
+    1.6 Klaus Mikaelson.
+    1.7 Kol Mikaelson.
+    1.8 Rebekah Mikaelson.</p>
+<p><strong>Note:</strong> Flexbox is not supported in Internet Explorer 10 and earlier versions.</p>
+
+<header>
+    <h1 style="font-size: 50px;color: whitesmoke;font-family:'Times New Roman', Times, serif;text-align: center;"><p>EVALUTION</p></h1>
+</header>
+
+<section>
+  <nav>
+    <ul>
+        <br>
+        <br>
+      <li><a href="#">WITCHE</a></li>
+      <li><a href="#">VAMPIRE</a></li>
+      <li><a href="#">WEREWOLF</a></li>
+      <li><a href="#">HYBRID</a></li>
+      <li><a href="#">VAMPIRE HUNTER</a></li>
+      <li><a href="#">--TURNED--</a></li>
+      <li><a href="#">HUMAN</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <h1>MIKAELSONS</h1>
+    <p>The Mikaelson Family (Elder Futhark: ᛗᛁᚲᚨᛖᛚᛋᛟᚾ) is a powerful family whose line dates back at least to the then Kingdom of Norway in the late 10th century with Mikael and Esther, a wealthy landowner and a Viking warrior, and a housewife and a witch, respectively. At the beginning of the 11th century, the family was mortal until the loss of Esther and Mikael's youngest child, Henrik to a werewolf attack spurred them to use Esther's magic to turn Mikael and the rest of their living children into the world's first vampires, from whom all vampires are descended. The Original vampires are known as some of the most powerful supernatural beings in the world, but the Mikaelson family is also known for having members who are witches and Hybrids.</p>
+    <p>Unfortunately for them, there were consequences for this transformation, and Nature sought to try to restore the balance they upset by giving them a weakness for every new strength they had gained.</p>
+  </article>
+
+  <article>
+    <h1>MIKAEL(HUNTER)</h1>
+    <p>Mikael was an Original vampire who was once a Viking and a wealthy landowner in Norway. He is the patriarch of the Mikaelson family and is the father of Freya, Finn, Elijah, Kol, Rebekah and Henrik and the step-father of Niklaus. He was in his early 50s when he was turned into a vampire and was seen to be strong, controlling, domineering, strict, and authoritarian in nature, qualities that were only magnified upon his transition. After moving to the New World, his wife bore more children, and his family was quite close, though he and Klaus didn't get along well at all, due to the fact that Klaus was the product of an affair with the Alpha of the werewolf clan in their village. His wife had been unfaithful many years before and when he found out about her affair, he hunted down and killed Klaus' father and his entire family, not realizing that he was igniting a war between species that rages to this day between the vampires and the werewolves.</p>
+    <p>Klaus later kills Mikael without a fight to get more Viking ash, as his corpse would produce the missing ingredient needed to make more weapons. Thus, Mikael dies by Klaus' hand a second time without fighting back.</p>
+  </article>
+
+  <article>
+    <h1>BENNETT</h1>
+    <p>The family was originally settled in the town of Salem, Massachusetts. However, after the witch trials began, the family relocated in Mystic Falls in 1692. They have lived in the town and maintained their secrecy of their magical talents for over one hundred years. The Bennett family is known to be dominated by women. The Bennett family has been linked to both the Salvatore and Petrova families since 1st Century B.C., with Qetsiyah as the oldest known ancestor. The Bennett family is also descended from a Traveler bloodline, as Qetsiyah was known for being the most powerful and gifted member of the Traveler community. As of the final season, Abby, a vampire, and Bonnie Bennett are the last living members of the Bennett family.</p>
+    <p>Because of Bonnie's opinions about vampires and their way of living (since vampires have to feed on humans and human blood for survival, thus increasing their chances of harming innocent people), this often makes her look like a prejudiced and judgmental person from time to time. However, Bonnie eventually comes to accept vampires and vampirism and even helps them and befriends them (as both her best friends Elena and Caroline are vampires), even though vampires and witches are known to be natural enemies. She once had the power of a hundred dead witches whom she asked for to defeat Klaus, but the privilege of drawing on this power was eventually taken from her when she brought Jeremy back to life and, in doing so, upset the balance of Nature.</p>
+  </article>
+
+  <article>
+    <h1>UNKNOWN WEREWOLF</h1>
+    <p>The origin of the werewolf race remains a mystery, but these werewolves are part of the evolution of early humans. Werewolves were part of the prehistory of humans during the Stone Age. The predecessors of the Homo Genus species are commonly associated with the Stone Age (3.4 million BCE, until 4500 BCE). There was a High Wolf Council that had the task of investigating the supernatural events that occurred in the area, to fight against evil (just like the Vitale Society), and to protect their own kind.</p>
+    <p>They're different from regular werewolves. They can stop their transformation at will, if needed. These werewolves can learn to change at will when the moon comes out, although it can be difficult. The original werewolves are more civilized, benevolent, and reasonable when compared to infected werewolves (those who were bitten or had their curse triggered). Zander, an Original Werewolf, believes that the normal werewolves were created with a mystical virus.</p>
+  </article>
+    
+
+</article>
+</section>
+
+<footer>
+  <p>Footer</p>
+</footer>
+    <div class="header">
+        <h1>MYSTIC FALLS</h1>
+      </div>
+      
+      <div class="row">
+      
+      <div class="col-3">
+        <h1>FOUNDERS</h1>
+    <h2>LIST</h2>
+
+    <buutton onclick= "myFunction()">Click Me</buutton>
+  <p id="demo"></p>
+  
+  <script>
+      function myFunction() {
+          document.getElementById("demo").innerHTML="Members Founding Comitte";
+      }
+  </script>
+        <ul>
+          <li>SALVATOR</li>
+          <li>PETROVA</li>
+          <li>GILBERT</li>
+          <li>BENNTTE</li>
+          <li>FORBES</li>
+          <li>LOCKWOOD</li>
+          <li>SALTSMEN</li>
+        </ul>
+      </div>
+      
+      <div class="col-6">
+      <body>
+
+        <div class="slideshow-container">
+
+          <div class="mySlides fade">
+            <div class="numbertext">4 / 7</div>
+            <img src="D:\ITfyMe\html\Screenshot 2021-06-02 141916.png" style="width:100%">
+            <!-- <div class="text">Caption Text</div> -->
+          </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">5 / 7</div>
+          <img src="D:\ITfyMe\html\Screenshot 2021-05-30 193806.png" style="width:100%">
+          <!-- <div class="text">Caption Text</div> -->
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">6 / 7</div>
+          <img src="D:\ITfyMe\html\Screenshot 2021-05-30 214931.png" style="width:100%">
+          <!-- <div class="text">Caption Two</div> -->
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">7 / 7</div>
+          <img src="D:\ITfyMe\html\Screenshot 2021-05-31 135447.png" style="width:100%">
+          <!-- <div class="text">Caption Three</div> -->
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(4)"></span> 
+          <span class="dot" onclick="currentSlide(5)"></span> 
+          <span class="dot" onclick="currentSlide(6)"></span>
+          <span class="dot" onclick="currentSlide(7)"></span> 
+        </div>
+        
+        <br>
+        <h1>CLUSTER</h1>
+        <p>The Originals, Vampires, Wearwolfs, Hybrids and A Witch</p>
+        <p></p>
+      </div>
+
+        <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+        </script>
+        
+        </body>
+      
+      <div class="col-3">
+          <ul>
+            <h1>CAR</h1>
+            <li>BENTLY</li>
+            <li>MCLARIAN</li>
+            <li>MINE COPPER</li>
+            <li>PORSCHE</li>
+            <br>
+            
+            <iframe src="D:\ITfyMe\html\itfyme.html" name="ABC" height="187px" width="200px" title="Iframe Example"></iframe>
+            <a href= "D:\ITfyMe\html\twotable.html" target= "ABC">TOI</a>
+          </ul>
+        </div>
+
+        <div class="col-6">
+          <ul>
+            <h3>The Originals</h3>
+            <li>Mikael.</li>
+            <li>Esther.</li>
+            <li>Freya Mikaelson.</li>
+            <li>Finn Mikaelson.</li>
+            <li>Elijah Mikaelson.</li>
+            <li>Klaus Mikaelson.</li>
+            <li>Kol Mikaelson.</li>
+            <li>Rebekah Mikaelson</li>
+          </ul>
+
+        </div>
+
+        <div class="col-6">
+          <ul>
+            <h3>The Vampire Diaries</h3>
+            <li>Elena Gilbert.</li>
+            <li>Katherine Pierce.</li>
+            <li>Stefan Salvatore.</li>
+            <li>Damon Salvatore.</li>
+            <li>Jeremy Gilbert.</li>
+            <li>Bonnie Bennett.</li>
+            <li>Caroline Forbes.</li>
+            <li>Tyler Lockwood.</li>
+          </ul>
+        </div>
+      
+      </div>
+      
+
+        </style>
+    </head>
+</body>
+</html>
+
