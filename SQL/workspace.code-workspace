@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "..\\Python"
+		},
+		{
+			"path": "..\\Java"
+		},
+		{
+			"path": "..\\Go"
+		},
+		{
+			"path": "..\\C"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"stdio.h": "c",
+			"memory.h": "c"
+		}
+	}
+}
