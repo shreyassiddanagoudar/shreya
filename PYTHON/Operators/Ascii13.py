@@ -1,0 +1,7 @@
+a=input()
+b=input()
+print(ord(a))
+c=ord(a)+ord(b)
+print(chr(c))
+c=ord(a)-ord(b)
+print(chr(c))
