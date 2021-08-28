@@ -1,0 +1,131 @@
+DROP PROCEDURE IF EXISTS s<Table_Name>Add;
+CREATE PROCEDURE s<Table_Name>Add( <input_procedure_column_detail> )
+  BEGIN
+
+    DECLARE _id INT;
+
+    INSERT INTO t<Table_Name> (<input_column_list>)
+    VALUES (<input_column_list_as_values>);
+    SET _id = (SELECT last_insert_id());
+
+    CALL sGetTransactionStatus(1, _id, '<Table_Name>_ID', NULL, NULL);
+  END;
+
+DROP PROCEDURE IF EXISTS s<Table_Name>Update;
+CREATE PROCEDURE s<Table_Name>Update(<input_procedure_column_detail>)
+  BEGIN
+    DECLARE _id INT;
+    UPDATE t<Table_Name>
+    SET
+    <Update_columns_detail>
+    WHERE <Table_Name>_ID = P<Table_Name>_ID;
+
+    SET _id = P<Table_Name>_ID;
+
+    CALL sGetTransactionStatus(1,_id, '<Table_Name>_ID', NULL, NULL);
+
+
+  END;
+
+
+
+DROP PROCEDURE IF EXISTS s<Table_Name>Delete;
+CREATE PROCEDURE s<Table_Name>Delete(IN PID INT)
+  BEGIN
+    DELETE FROM t<Table_Name>
+    WHERE <Table_Name>_ID = PID;
+    CALL sGetTransactionStatus(1, PID, '<Table_Name>_ID', NULL, NULL);
+
+  END;
+
+
+DROP PROCEDURE IF EXISTS s<Table_Name>Get;
+CREATE PROCEDURE s<Table_Name>Get(IN PID INT)
+  BEGIN
+    SELECT
+      <input_column_list>
+    FROM t<Table_Name>
+    WHERE <Table_Name>_ID = PID;
+  END;
+
+DROP PROCEDURE IF EXISTS s<Table_Name>GetList;
+CREATE PROCEDURE s<Table_Name>GetList(IN PIDs TEXT)
+  BEGIN
+    IF PIDs = '' OR PIDs IS NULL
+    THEN
+      SELECT
+      <input_column_list>
+
+      FROM t<Table_Name>;
+
+    ELSE
+      SELECT
+      <input_column_list>
+
+      FROM t<Table_Name>
+      WHERE find_in_set(<Table_Name>_ID, PIDs);
+    END IF;
+
+  END;
+
+DROP PROCEDURE IF EXISTS s<Table_Name>ObjectGet;
+CREATE PROCEDURE s<Table_Name>ObjectGet(IN PID INT)
+  BEGIN
+    SELECT
+      <input_column_list>
+    FROM t<Table_Name>
+    # WHERE <Table_Name>_ID = P<Table_Name>_ID;
+  END;
+
+
+
+DROP PROCEDURE IF EXISTS s<Table_Name>ObjectGetList;
+CREATE PROCEDURE s<Table_Name>ObjectGetList(<input_procedure_column_detail>)
+  BEGIN
+
+
+    SELECT
+    <input_column_list>
+
+    FROM
+      t<Table_Name>
+    #       WHERE Status = PStatus
+    ORDER BY <Table_Name>_ID DESC;
+
+  END;
+
+
+DROP PROCEDURE IF EXISTS s<Table_Name>ObjectGetListPage;
+CREATE PROCEDURE s<Table_Name>ObjectGetListPage(<input_procedure_column_detail> , IN PPage_Num  INT, IN PPage_Size INT)
+  BEGIN
+
+    DECLARE _offset INT DEFAULT 0;
+    DECLARE _total_rec INT DEFAULT 0;
+    DECLARE _total_pages INT DEFAULT 1;
+    SET _offset = fGetOffset(PPage_Num, PPage_Size);
+    SET _total_rec = (SELECT count(*)
+                      FROM t<Table_Name>
+      #       WHERE Status = PStatus
+
+    );
+    SET _total_pages = fGetTotalPages(_total_rec, PPage_Size);
+    IF _total_rec > 0
+    THEN
+
+      SELECT
+        _total_rec   AS total_records,
+        _total_pages AS total_pages;
+
+      SELECT
+      <input_column_list>
+
+      FROM
+        t<Table_Name>
+      #       WHERE Status = PStatus
+      ORDER BY <Table_Name>_ID DESC
+      LIMIT _offset, PPage_Size;
+
+    END IF;
+  END;
+
+

@@ -1,0 +1,20 @@
+"""
+Created By : <Auto generated code>
+Created On :
+Reviewed By :
+Reviewed On :
+Version :
+"""
+from <App_Name>.models.base_model import BaseModel
+from <App_Name>.utils.helpers.general_helper import Validation
+
+
+class <Class_Name>(BaseModel):
+    def __init__(self, <Constructor_Parameters>):
+        <Constructor_Body>
+
+    def get_id(self):
+        return None
+
+    def is_valid(self, type, event_type=None):
+        return Validation()

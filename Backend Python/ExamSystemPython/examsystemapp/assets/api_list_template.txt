@@ -1,0 +1,23 @@
+<table-name> : API LIST
+
+
+<base_url>/api/main/<table-name>/add
+<Json_Name> :
+{
+<keylist>
+}
+<base_url>/api/main/<table-name>/update
+<Json_Name> :
+{
+<keylist>
+}
+<base_url>/api/main/<table-name>/delete
+<Json_Name> :
+{
+<keylist>
+}
+
+<base_url>/api/main/<table-name>/get?id=1
+<base_url>/api/main/<table-name>/get-list?ids=1,2
+<base_url>/api/main/<table-name>/get-list-object
+<base_url>/api/main/<table-name>/get-list-object-page

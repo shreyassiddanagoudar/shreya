@@ -1,0 +1,90 @@
+"""
+Created By : <Auto generated code>
+Created On :
+Reviewed By :
+Reviewed On :
+Version :
+"""
+import json
+from django.http import HttpRequest
+from <App_Name>.api.base_controller import BaseController
+from <App_Name>.models.<Model_File_Name> import <Model_Class_Name>
+from <App_Name>.services.<Service_File_Name> import <Service_Class_Name>
+from <App_Name>.utils.constants.constants import DataTypes, HttpMethodType, AppConstants
+from <App_Name>.utils.helpers.general_helper import IntHelper, FloatHelper
+from <App_Name>.utils.helpers.request_helper import RequestConfig, ParamsObject
+
+
+class <Api_Class_Name>(BaseController):
+
+    def __init__(self, request):
+        BaseController.__init__(self, request)
+
+    def add(self, request: HttpRequest):
+        <Json_Name> = json.loads(request.POST.get("<Json_Name>"))
+
+        <Object_Name>: <Model_Class_Name> = <Model_Class_Name>()
+        <Json_To_Model_Data>
+        <Service_Variable>: <Service_Class_Name> = <Service_Class_Name>()
+        <Object_Name> = <Service_Variable>.add(<Object_Name>)
+
+        return self.send_response(<Object_Name>)
+
+    def update(self, request: HttpRequest):
+        <Json_Name> = json.loads(request.POST.get("<Json_Name>"))
+
+        <Object_Name>: <Model_Class_Name> = <Model_Class_Name>()
+        <Json_To_Model_Data>
+        <Service_Variable>: <Service_Class_Name> = <Service_Class_Name>()
+        <Object_Name> = <Service_Variable>.update(<Object_Name>)
+
+        return self.send_response(<Object_Name>)
+
+    def delete(self, request: HttpRequest):
+        <Json_Name> = json.loads(request.POST.get("<Json_Name>"))
+
+        <Object_Name>: <Model_Class_Name> = <Model_Class_Name>()
+        <Json_To_Model_Data>
+        <Service_Variable>: <Service_Class_Name> = <Service_Class_Name>()
+        <Object_Name> = <Service_Variable>.delete(<Object_Name>)
+
+        return self.send_response(<Object_Name>)
+
+    def get(self, request: HttpRequest):
+        params = [
+            {"id": RequestConfig(from_session=False, nullable=False, datatype=DataTypes.INT)}
+        ]
+        params: ParamsObject = self.convert_params(request, HttpMethodType.get, params)
+        <Service_Variable>: <Service_Class_Name> = <Service_Class_Name>()
+        data = <Service_Variable>.get(params)
+        return self.send_response(data)
+
+    def get_list(self, request: HttpRequest):
+        params = [
+            {"ids": RequestConfig(from_session=False, nullable=False, datatype=DataTypes.STRING, default='')}
+        ]
+        params: ParamsObject = self.convert_params(request, HttpMethodType.get, params)
+        <Service_Variable>: <Service_Class_Name> = <Service_Class_Name>()
+        data = <Service_Variable>.get_list(params)
+        return self.send_response(data)
+
+    def get_object(self, request: HttpRequest):
+        params = []
+        params: ParamsObject = self.convert_params(request, HttpMethodType.get, params)
+        <Service_Variable>: <Service_Class_Name> = <Service_Class_Name>()
+        data = <Service_Variable>.get_object(params)
+        return self.send_response(data)
+
+    def get_list_object(self, request: HttpRequest):
+        params = []
+        params: ParamsObject = self.convert_params(request, HttpMethodType.get, params)
+        <Service_Variable>: <Service_Class_Name> = <Service_Class_Name>()
+        data = <Service_Variable>.get_list_object(params)
+        return self.send_response(data)
+
+    def get_list_object_page(self, request: HttpRequest):
+        params = []
+        params: ParamsObject = self.convert_params(request, HttpMethodType.get, params)
+        <Service_Variable>: <Service_Class_Name> = <Service_Class_Name>()
+        data = <Service_Variable>.get_list_object_paginated(params)
+        return self.send_response(data)

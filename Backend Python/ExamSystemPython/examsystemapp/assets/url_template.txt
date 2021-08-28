@@ -1,0 +1,21 @@
+"""
+Created By : Nikesh
+Created On :
+Reviewed By :
+Reviewed On :
+Version :
+"""
+
+from .url_mapping import <Url_Mapping_File_Name>
+from django.urls import path
+
+urlpatterns = [
+    path("add", <Url_Mapping_File_Name>.add),
+    path("update", <Url_Mapping_File_Name>.update),
+    path("delete", <Url_Mapping_File_Name>.delete),
+    path("get", <Url_Mapping_File_Name>.get),
+    path("get-list", <Url_Mapping_File_Name>.get_list),
+    path("get-object", <Url_Mapping_File_Name>.get_object),
+    path("get-list-object", <Url_Mapping_File_Name>.get_list_object),
+    path("get-list-object-page", <Url_Mapping_File_Name>.get_list_object_page),
+]

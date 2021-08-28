@@ -1,0 +1,105 @@
+"""
+Created By : <Auto generated code>
+Created On :
+Reviewed By :
+Reviewed On :
+Version :
+"""
+from <App_Name>.models.<Model_File_Name> import <Model_Class_Name>
+from <App_Name>.repository.base_repository import BaseRepository
+from <App_Name>.utils.constants.constants import AppConstants
+from <App_Name>.utils.helpers.general_helper import IntHelper, StringHelper, FloatHelper
+from <App_Name>.utils.helpers.request_helper import ParamsObject
+
+
+class <Repo_Class_Name>(BaseRepository):
+
+    def __init__(self, ext_params={}):
+        BaseRepository.__init__(self, ext_params)
+
+    def pre_add(self, object: <Model_Class_Name>):
+        self.sp_name = "s<Object_Name>Add"
+        list_params = [<Proc_Params>]
+        self.params_list = list_params
+
+    def post_add(self, object, returned_dict):
+        <Model_Variable_Name>: <Model_Class_Name> = object
+        <Model_Variable_Name>.id = int(returned_dict.get(AppConstants.DB_TRANSACTION_ID_KEY))
+
+        return <Model_Variable_Name>
+
+    def pre_update(self, object: <Model_Class_Name>):
+        self.sp_name = "s<Object_Name>Update"
+        list_params = [<Proc_Params>]
+        self.params_list = list_params
+
+    def post_update(self, object, returned_dict):
+        <Model_Variable_Name>: <Model_Class_Name> = object
+        <Model_Variable_Name>.id = int(returned_dict.get(AppConstants.DB_TRANSACTION_ID_KEY))
+
+        return <Model_Variable_Name>
+
+    def pre_delete(self, object: <Model_Class_Name>):
+        self.sp_name = "s<Object_Name>Delete"
+        list_params = [<Proc_Params>]
+        self.params_list = list_params
+
+    def post_delete(self, object, returned_dict):
+        <Model_Variable_Name>: <Model_Class_Name> = object
+        <Model_Variable_Name>.id = int(returned_dict.get(AppConstants.DB_TRANSACTION_ID_KEY))
+
+        return <Model_Variable_Name>
+
+    def pre_get(self, params):
+        self.sp_name = "s<Object_Name>Get"
+        self.params_list = params.get_params_list()
+
+    def post_get(self, cursor_object):
+        if len(cursor_object.get_data()) > 0:
+            <Model_Variable_Name>: <Model_Class_Name> = <Model_Class_Name>()
+            for each_tuple in cursor_object.get_data():
+                <Post_Get_Data>
+            return <Model_Variable_Name>
+        else:
+            return None
+
+    def pre_get_list(self, params):
+        self.sp_name = "s<Object_Name>GetList"
+        self.params_list = params.get_params_list()
+
+    def post_get_list(self, cursor_object):
+        list_data = []
+        if len(cursor_object.get_data()) > 0:
+            for each_tuple in cursor_object.get_data():
+                <Model_Variable_Name>: <Model_Class_Name> = <Model_Class_Name>()
+                <Post_Get_Data>
+                list_data.append(<Model_Variable_Name>)
+
+            return list_data
+        else:
+            return None
+
+    def pre_get_object(self, params):
+        self.sp_name = "s<Object_Name>ObjectGet"
+        self.params_list = params.get_params_list()
+
+    def post_get_object(self, cursor_object):
+        return self.post_get(cursor_object)
+
+    def pre_get_list_object(self, params: ParamsObject):
+        self.sp_name = "s<Object_Name>ObjectGetList"
+        self.params_list = params.get_params_list()
+
+    def post_get_list_object(self, cursor_object):
+        return self.post_get_list(cursor_object)
+
+    def pre_get_data_list_object_paginated(self, params):
+        self.sp_name = "s<Object_Name>ObjectGetListPage"
+        self.params_list = params.get_params_list()
+
+    def post_get_data_list_object_paginated(self, list_cursor_object):
+        if len(list_cursor_object) > 0:
+            object_list = self.post_get_list(list_cursor_object[1])
+            return self.build_paginated_result(list_cursor_object[0], object_list)
+        else:
+            return None
