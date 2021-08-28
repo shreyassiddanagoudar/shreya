@@ -1,0 +1,554 @@
+[25/Apr/2019 15:59:25] ERROR [django.request:228] Internal Server Error: /api/user/upload-file
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.user_mapping.upload_file didn't return an HttpResponse object. It returned None instead.
+[25/Apr/2019 15:59:25] ERROR [django.server:154] "GET /api/user/upload-file HTTP/1.1" 500 60011
+[30/Apr/2019 12:05:28] ERROR [django.request:228] Internal Server Error: /api/user/add-entity
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\urls\url_mapping\user_mapping.py", line 42, in add_entity
+    return User(request).add_entity(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\api\user.py", line 232, in add_entity
+    val = self.user_service.add_entity({"list": [], "dict": {}})
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\user_service.py", line 141, in add_entity
+    self.cache_manager.put_in_cache(cache_key, entObj)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\utils\cache_manager\cache_manager.py", line 102, in put_in_cache
+    return self.get_redis_instance().set(key, self.obj_to_bytes(value))
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\utils\cache_manager\cache_manager.py", line 86, in obj_to_bytes
+    obj_str = json.dumps(obj)
+  File "C:\Program Files (x86)\Python37-32\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Program Files (x86)\Python37-32\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files (x86)\Python37-32\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Program Files (x86)\Python37-32\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Entity is not JSON serializable
+[30/Apr/2019 12:05:28] ERROR [django.server:154] "POST /api/user/add-entity HTTP/1.1" 500 110756
+[30/Apr/2019 12:51:05] ERROR [django.request:228] Internal Server Error: /api/user/add-entity
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\urls\url_mapping\user_mapping.py", line 42, in add_entity
+    return User(request).add_entity(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\api\user.py", line 232, in add_entity
+    val = self.user_service.add_entity({"list": [], "dict": {}})
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\user_service.py", line 141, in add_entity
+    self.cache_manager.put_in_cache(cache_key, entObj.__dict__)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\utils\cache_manager\cache_manager.py", line 102, in put_in_cache
+    return self.get_redis_instance().set(key, self.obj_to_bytes(value))
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\utils\cache_manager\cache_manager.py", line 86, in obj_to_bytes
+    obj_str = json.dumps(obj)
+  File "C:\Program Files (x86)\Python37-32\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Program Files (x86)\Python37-32\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Program Files (x86)\Python37-32\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Program Files (x86)\Python37-32\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+[30/Apr/2019 12:51:05] ERROR [django.server:154] "POST /api/user/add-entity HTTP/1.1" 500 115812
+[30/Apr/2019 14:12:01] ERROR [django.request:228] Internal Server Error: /api/user/get-entity
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\urls\url_mapping\user_mapping.py", line 49, in get_entity
+    return User(request).get_entity(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\api\user.py", line 236, in get_entity
+    val = self.user_service.get_entity({"list": [1], "dict": {}})
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\user_service.py", line 203, in get_entity
+    if self.cache_manager.has_key("ENTITY_", str(entity_id)):
+TypeError: has_key() takes 2 positional arguments but 3 were given
+[30/Apr/2019 14:12:01] ERROR [django.server:154] "POST /api/user/get-entity HTTP/1.1" 500 78308
+[30/Apr/2019 14:13:33] ERROR [django.request:228] Internal Server Error: /api/user/get-entity
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\urls\url_mapping\user_mapping.py", line 49, in get_entity
+    return User(request).get_entity(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\api\user.py", line 236, in get_entity
+    val = self.user_service.get_entity({"list": [1], "dict": {}})
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\user_service.py", line 211, in get_entity
+    actual_ent_obj = Entity().from_json(entity_object)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\user_service.py", line 51, in from_json
+    json_dict = json.loads(json_str)
+  File "C:\Program Files (x86)\Python37-32\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+[30/Apr/2019 14:13:33] ERROR [django.server:154] "POST /api/user/get-entity HTTP/1.1" 500 86514
+[30/Apr/2019 14:13:56] ERROR [django.request:228] Internal Server Error: /api/user/get-entity
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\urls\url_mapping\user_mapping.py", line 49, in get_entity
+    return User(request).get_entity(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\api\user.py", line 236, in get_entity
+    val = self.user_service.get_entity({"list": [1], "dict": {}})
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\user_service.py", line 211, in get_entity
+    actual_ent_obj = Entity().from_json(entity_object)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\user_service.py", line 51, in from_json
+    json_dict = json.loads(json_str)
+  File "C:\Program Files (x86)\Python37-32\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+[30/Apr/2019 14:13:56] ERROR [django.server:154] "POST /api/user/get-entity HTTP/1.1" 500 86514
+[30/Apr/2019 14:15:12] ERROR [django.request:228] Internal Server Error: /api/user/get-entity
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\urls\url_mapping\user_mapping.py", line 49, in get_entity
+    return User(request).get_entity(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\api\user.py", line 236, in get_entity
+    val = self.user_service.get_entity({"list": [1], "dict": {}})
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\user_service.py", line 211, in get_entity
+    actual_ent_obj = Entity().from_json(entity_object)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\user_service.py", line 51, in from_json
+    json_dict = json.loads(json_str)
+  File "C:\Program Files (x86)\Python37-32\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+[30/Apr/2019 14:15:12] ERROR [django.server:154] "POST /api/user/get-entity HTTP/1.1" 500 89272
+[01/May/2019 16:00:10] ERROR [django.request:228] Internal Server Error: /api/user/user-authenticate
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\base_service.py", line 345, in __get_data_direct_
+    self.put_in_cache(cache_key, data)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\base_service.py", line 53, in put_in_cache
+    return self.cache_manager.put_in_cache(cache_key, data)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\utils\cache_manager\cache_manager.py", line 103, in put_in_cache
+    return self.get_redis_instance().set(key, self.obj_to_bytes(value))
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\redis\client.py", line 1451, in set
+    return self.execute_command('SET', *pieces)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\redis\client.py", line 775, in execute_command
+    return self.parse_response(connection, command_name, **options)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\redis\client.py", line 789, in parse_response
+    response = connection.read_response()
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\redis\connection.py", line 642, in read_response
+    raise response
+redis.exceptions.ResponseError: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\urls\url_mapping\user_mapping.py", line 8, in user_authenticate
+    return User(request).user_authenticate(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\api\user.py", line 89, in user_authenticate
+    data = self.user_service.user_authenticate(params)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\user_service.py", line 109, in user_authenticate
+    return self.get_direct("sUserAuthenticate", params, True, "USER")
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\base_service.py", line 368, in get_direct
+    return self.__get_data_direct_(sp_name, params, is_cacheable, cache_key_prefix, False)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\base_service.py", line 359, in __get_data_direct_
+    raise KaroException(self.general_error_code, str(ex1), None)
+KAROAPP.utils.exception_handling.exception.KaroException: ('ERROR001', 'MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.', None)
+[01/May/2019 16:00:10] ERROR [django.server:154] "POST /api/user/user-authenticate HTTP/1.1" 500 118965
+[01/May/2019 16:24:36] ERROR [django.request:228] Internal Server Error: /api/user/user-authenticate
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\base_service.py", line 345, in __get_data_direct_
+    self.put_in_cache(cache_key, data)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\base_service.py", line 53, in put_in_cache
+    return self.cache_manager.put_in_cache(cache_key, data)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\utils\cache_manager\cache_manager.py", line 103, in put_in_cache
+    return self.get_redis_instance().set(key, self.obj_to_bytes(value))
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\utils\cache_manager\cache_manager.py", line 88, in obj_to_bytes
+    bytes = ' '.join(format(ord(letter), 'b') for letter in obj)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\utils\cache_manager\cache_manager.py", line 88, in <genexpr>
+    bytes = ' '.join(format(ord(letter), 'b') for letter in obj)
+TypeError: ord() expected string of length 1, but dict found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\urls\url_mapping\user_mapping.py", line 8, in user_authenticate
+    return User(request).user_authenticate(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\api\user.py", line 89, in user_authenticate
+    data = self.user_service.user_authenticate(params)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\user_service.py", line 109, in user_authenticate
+    return self.get_direct("sUserAuthenticate", params, True, "USER")
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\base_service.py", line 368, in get_direct
+    return self.__get_data_direct_(sp_name, params, is_cacheable, cache_key_prefix, False)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\base_service.py", line 359, in __get_data_direct_
+    raise KaroException(self.general_error_code, str(ex1), None)
+KAROAPP.utils.exception_handling.exception.KaroException: ('ERROR001', 'ord() expected string of length 1, but dict found', None)
+[01/May/2019 16:24:36] ERROR [django.server:154] "POST /api/user/user-authenticate HTTP/1.1" 500 118513
+[01/May/2019 16:26:18] ERROR [django.request:228] Internal Server Error: /api/user/user-authenticate
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\base_service.py", line 345, in __get_data_direct_
+    self.put_in_cache(cache_key, data)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\base_service.py", line 53, in put_in_cache
+    return self.cache_manager.put_in_cache(cache_key, data)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\utils\cache_manager\cache_manager.py", line 103, in put_in_cache
+    return self.get_redis_instance().set(key, self.obj_to_bytes(value))
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\utils\cache_manager\cache_manager.py", line 88, in obj_to_bytes
+    bytes = ' '.join(format(ord(letter), 'b') for letter in obj)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\utils\cache_manager\cache_manager.py", line 88, in <genexpr>
+    bytes = ' '.join(format(ord(letter), 'b') for letter in obj)
+TypeError: ord() expected string of length 1, but dict found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\urls\url_mapping\user_mapping.py", line 8, in user_authenticate
+    return User(request).user_authenticate(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\api\user.py", line 89, in user_authenticate
+    data = self.user_service.user_authenticate(params)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\user_service.py", line 109, in user_authenticate
+    return self.get_direct("sUserAuthenticate", params, True, "USER")
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\base_service.py", line 368, in get_direct
+    return self.__get_data_direct_(sp_name, params, is_cacheable, cache_key_prefix, False)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\KAROAPP\services\base_service.py", line 359, in __get_data_direct_
+    raise KaroException(self.general_error_code, str(ex1), None)
+KAROAPP.utils.exception_handling.exception.KaroException: ('ERROR001', 'ord() expected string of length 1, but dict found', None)
+[01/May/2019 16:26:18] ERROR [django.server:154] "POST /api/user/user-authenticate HTTP/1.1" 500 118513
+[02/May/2019 11:48:29] ERROR [django.request:228] Internal Server Error: /api/user/get-user-by-id
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.user_mapping.get_user_by_id didn't return an HttpResponse object. It returned None instead.
+[02/May/2019 11:48:29] ERROR [django.server:154] "GET /api/user/get-user-by-id HTTP/1.1" 500 61997
+[02/May/2019 11:49:04] ERROR [django.request:228] Internal Server Error: /api/user/get-user-by-id
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.user_mapping.get_user_by_id didn't return an HttpResponse object. It returned None instead.
+[02/May/2019 11:49:04] ERROR [django.server:154] "GET /api/user/get-user-by-id HTTP/1.1" 500 61997
+[02/May/2019 11:50:28] ERROR [django.request:228] Internal Server Error: /api/user/get-user-by-id
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.user_mapping.get_user_by_id didn't return an HttpResponse object. It returned None instead.
+[02/May/2019 11:50:28] ERROR [django.server:154] "GET /api/user/get-user-by-id HTTP/1.1" 500 61997
+[02/May/2019 11:50:53] ERROR [django.request:228] Internal Server Error: /api/user/get-user-by-id
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.user_mapping.get_user_by_id didn't return an HttpResponse object. It returned None instead.
+[02/May/2019 11:50:53] ERROR [django.server:154] "GET /api/user/get-user-by-id HTTP/1.1" 500 61997
+[02/May/2019 12:09:35] ERROR [django.request:228] Internal Server Error: /api/user/get-user-by-id
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.user_mapping.get_user_by_id didn't return an HttpResponse object. It returned None instead.
+[02/May/2019 12:09:35] ERROR [django.server:154] "GET /api/user/get-user-by-id HTTP/1.1" 500 61997
+[02/May/2019 12:11:41] ERROR [django.request:228] Internal Server Error: /api/user/get-user-by-id
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.user_mapping.get_user_by_id didn't return an HttpResponse object. It returned None instead.
+[02/May/2019 12:11:41] ERROR [django.server:154] "GET /api/user/get-user-by-id HTTP/1.1" 500 61997
+[04/May/2019 09:13:58] ERROR [django.request:228] Internal Server Error: /api/user/get-user-by-id
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.user_mapping.get_user_by_id didn't return an HttpResponse object. It returned None instead.
+[04/May/2019 09:13:58] ERROR [django.server:154] "GET /api/user/get-user-by-id HTTP/1.1" 500 59808
+[04/May/2019 09:16:22] ERROR [django.request:228] Internal Server Error: /api/user/get-user-by-id
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.user_mapping.get_user_by_id didn't return an HttpResponse object. It returned None instead.
+[04/May/2019 09:16:22] ERROR [django.server:154] "GET /api/user/get-user-by-id HTTP/1.1" 500 59808
+[04/May/2019 11:09:48] ERROR [django.request:228] Internal Server Error: /api/user/get-user-by-id
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.user_mapping.get_user_by_id didn't return an HttpResponse object. It returned None instead.
+[04/May/2019 11:09:48] ERROR [django.server:154] "GET /api/user/get-user-by-id HTTP/1.1" 500 59808
+[04/May/2019 11:10:07] ERROR [django.request:228] Internal Server Error: /api/user/get-user-by-id
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.user_mapping.get_user_by_id didn't return an HttpResponse object. It returned None instead.
+[04/May/2019 11:10:07] ERROR [django.server:154] "GET /api/user/get-user-by-id HTTP/1.1" 500 59808
+[04/May/2019 11:13:42] ERROR [django.request:228] Internal Server Error: /api/user/get-user-by-id
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.user_mapping.get_user_by_id didn't return an HttpResponse object. It returned None instead.
+[04/May/2019 11:13:42] ERROR [django.server:154] "GET /api/user/get-user-by-id HTTP/1.1" 500 59808
+[04/May/2019 11:54:43] ERROR [django.request:228] Internal Server Error: /api/user/get-user-by-id
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.user_mapping.get_user_by_id didn't return an HttpResponse object. It returned None instead.
+[04/May/2019 11:54:43] ERROR [django.server:154] "GET /api/user/get-user-by-id HTTP/1.1" 500 59808
+[04/May/2019 11:55:48] ERROR [django.request:228] Internal Server Error: /api/user/get-user-by-id
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.user_mapping.get_user_by_id didn't return an HttpResponse object. It returned None instead.
+[04/May/2019 11:55:48] ERROR [django.server:154] "GET /api/user/get-user-by-id HTTP/1.1" 500 59808
+[06/May/2019 14:22:56] ERROR [django.request:228] Internal Server Error: /api/user/add
+[06/May/2019 14:22:56] ERROR [django.server:154] "GET /api/user/add HTTP/1.1" 500 153
+[06/May/2019 14:43:07] ERROR [django.request:228] Internal Server Error: /api/user/getlist
+[06/May/2019 14:43:07] ERROR [django.server:154] "GET /api/user/getlist?user_ids=9666,42 HTTP/1.1" 500 141
+[06/May/2019 15:23:52] ERROR [django.request:228] Internal Server Error: /api/user/get-users-test2
+[06/May/2019 15:23:52] ERROR [django.server:154] "GET /api/user/get-users-test2?user_id=151&page_num=1&num_rec=10 HTTP/1.1" 500 149
+[07/May/2019 08:55:52] ERROR [django.request:228] Internal Server Error: /api/user/get-users-test2
+[07/May/2019 08:55:53] ERROR [django.server:154] "GET /api/user/get-users-test2?user_id=151&page_num=1&num_rec=10 HTTP/1.1" 500 141
+[07/May/2019 08:55:58] ERROR [django.server:154] "GET /api/user/get-users-test2?user_id=151&page_num=1&num_rec=10 HTTP/1.1" 500 59
+[07/May/2019 15:56:03] ERROR [django.request:228] Internal Server Error: /api/user/add
+[07/May/2019 15:56:03] ERROR [django.server:154] "GET /api/user/add HTTP/1.1" 500 185
+[07/May/2019 15:56:33] ERROR [django.request:228] Internal Server Error: /api/user/add
+[07/May/2019 15:56:33] ERROR [django.server:154] "GET /api/user/add HTTP/1.1" 500 185
+[07/May/2019 15:58:23] ERROR [django.request:228] Internal Server Error: /api/user/add
+[07/May/2019 15:58:23] ERROR [django.server:154] "POST /api/user/add HTTP/1.1" 500 160
+[07/May/2019 16:04:43] ERROR [django.request:228] Internal Server Error: /api/user/add
+[07/May/2019 16:04:43] ERROR [django.server:154] "POST /api/user/add HTTP/1.1" 500 186
+[07/May/2019 16:14:47] ERROR [django.request:228] Internal Server Error: /api/user/add
+[07/May/2019 16:14:47] ERROR [django.server:154] "POST /api/user/add HTTP/1.1" 500 186
+[22/May/2019 09:14:59] ERROR [django.request:228] Internal Server Error: /api/cart/upload
+[22/May/2019 09:14:59] ERROR [django.server:154] "POST /api/cart/upload HTTP/1.1" 500 176
+[22/May/2019 09:32:36] ERROR [django.request:228] Internal Server Error: /api/cart/add
+[22/May/2019 09:32:36] ERROR [django.server:154] "POST /api/cart/add HTTP/1.1" 500 487
+[22/May/2019 09:36:04] ERROR [django.request:228] Internal Server Error: /api/cart/add
+[22/May/2019 09:36:04] ERROR [django.server:154] "POST /api/cart/add HTTP/1.1" 500 147
+[22/May/2019 09:37:41] ERROR [django.request:228] Internal Server Error: /api/cart/add
+[22/May/2019 09:37:41] ERROR [django.server:154] "POST /api/cart/add HTTP/1.1" 500 185
+[22/May/2019 09:40:40] ERROR [django.request:228] Internal Server Error: /api/cart/add
+[22/May/2019 09:40:40] ERROR [django.server:154] "POST /api/cart/add HTTP/1.1" 500 283
+[22/May/2019 10:24:12] ERROR [django.request:228] Internal Server Error: /api/pickup-request/add
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.pickup_request_mapping.add_pickup_request didn't return an HttpResponse object. It returned None instead.
+[22/May/2019 10:24:12] ERROR [django.server:154] "POST /api/pickup-request/add HTTP/1.1" 500 64397
+[24/May/2019 14:20:25] ERROR [django.server:137] You're accessing the development server over HTTPS, but it only supports HTTP.
+
+[24/May/2019 15:16:07] ERROR [django.request:228] Internal Server Error: /api/masters/state
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: masters() takes 1 positional argument but 2 were given
+[24/May/2019 15:16:07] ERROR [django.server:154] "POST /api/masters/state?id=1 HTTP/1.1" 500 69111
+[24/May/2019 15:17:50] ERROR [django.request:228] Internal Server Error: /api/masters/state
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: masters() takes 1 positional argument but 2 were given
+[24/May/2019 15:17:50] ERROR [django.server:154] "POST /api/masters/state?id=1 HTTP/1.1" 500 69111
+[24/May/2019 15:19:12] ERROR [django.request:228] Internal Server Error: /api/masters/state
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: masters() takes 1 positional argument but 2 were given
+[24/May/2019 15:19:12] ERROR [django.server:154] "POST /api/masters/state?id=1 HTTP/1.1" 500 69111
+[24/May/2019 15:21:34] ERROR [django.request:228] Internal Server Error: /api/masters/
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.external_mapping.masters didn't return an HttpResponse object. It returned None instead.
+[24/May/2019 15:21:34] ERROR [django.server:154] "POST /api/masters/ HTTP/1.1" 500 64072
+[24/May/2019 15:23:22] ERROR [django.request:228] Internal Server Error: /api/masters/state
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: masters() takes 1 positional argument but 2 were given
+[24/May/2019 15:23:22] ERROR [django.server:154] "POST /api/masters/state HTTP/1.1" 500 68800
+[24/May/2019 15:26:34] ERROR [django.request:228] Internal Server Error: /api/masters/state
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: masters() takes 1 positional argument but 2 were given
+[24/May/2019 15:26:34] ERROR [django.server:154] "POST /api/masters/state HTTP/1.1" 500 68800
+[24/May/2019 15:27:11] ERROR [django.request:228] Internal Server Error: /api/masters/
+Traceback (most recent call last):
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Nikesh\PycharmProjects\KARO\venv\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view KAROAPP.urls.url_mapping.external_mapping.masters didn't return an HttpResponse object. It returned None instead.
+[24/May/2019 15:27:11] ERROR [django.server:154] "POST /api/masters/ HTTP/1.1" 500 64072
+[27/May/2019 14:54:11] ERROR [django.request:228] Internal Server Error: /api/main/entity/get-list-my-entities
+[27/May/2019 14:54:11] ERROR [django.server:154] "POST /api/main/entity/get-list-my-entities HTTP/1.1" 500 185
+[27/May/2019 14:55:07] ERROR [django.request:228] Internal Server Error: /api/main/entity/get-list-my-entities
+[27/May/2019 14:55:07] ERROR [django.server:154] "POST /api/main/entity/get-list-my-entities HTTP/1.1" 500 185
+[27/May/2019 14:55:59] ERROR [django.request:228] Internal Server Error: /api/main/entity/get-list-my-entities
+[27/May/2019 14:55:59] ERROR [django.server:154] "POST /api/main/entity/get-list-my-entities HTTP/1.1" 500 185
+[27/May/2019 14:58:52] ERROR [django.request:228] Internal Server Error: /api/main/entity/get-list-my-entities
+[27/May/2019 14:58:52] ERROR [django.server:154] "POST /api/main/entity/get-list-my-entities HTTP/1.1" 500 168
+[29/May/2019 14:39:08] ERROR [django.request:228] Internal Server Error: /api/main/entity/get-list-my-entities
+[29/May/2019 14:39:08] ERROR [django.server:154] "GET /api/main/entity/get-list-my-entities?entity_id=1&user_id=1&entity_type=&state_id=&city_id=&entity_name_search_key=&page_num=1&num_rec=10 HTTP/1.1" 500 147
+[29/May/2019 14:47:58] ERROR [django.request:228] Internal Server Error: /api/main/entity/get-list-my-entities
+[29/May/2019 14:47:58] ERROR [django.server:154] "GET /api/main/entity/get-list-my-entities?entity_id=1&user_id=1&entity_type=&state_id=&city_id=&entity_name_search_key=&page_num=1&num_rec=10 HTTP/1.1" 500 186
+[29/May/2019 14:51:54] ERROR [django.request:228] Internal Server Error: /api/main/entity/get-list-my-entities
+[29/May/2019 14:51:54] ERROR [django.server:154] "GET /api/main/entity/get-list-my-entities?entity_id=1&user_id=1&entity_type=&state_id=&city_id=&entity_name_search_key=&page_num=1&num_rec=10 HTTP/1.1" 500 138
+[31/May/2019 12:27:15] ERROR [django.request:228] Internal Server Error: /api/masters/state/getlist
+[31/May/2019 12:27:15] ERROR [django.server:154] "GET /api/masters/state/getlist?state_ids= HTTP/1.1" 500 153
+[31/May/2019 12:55:10] ERROR [django.request:228] Internal Server Error: /api/main/entity/get-list-my-entities
+[31/May/2019 12:55:10] ERROR [django.server:154] "GET /api/main/entity/get-list-my-entities?entity_id=1&user_id=1&entity_type=&state_id=&city_id=&entity_name_search_key=&page_num=2&num_rec=10 HTTP/1.1" 500 207
+[01/Jun/2019 12:36:29] ERROR [django.request:228] Internal Server Error: /api/main/entity/get-list-my-entities
+[01/Jun/2019 12:36:29] ERROR [django.server:154] "GET /api/main/entity/get-list-my-entities?entity_type=&entity_name_search_key=&user_id=1&num_rec=25&page_num=2&state_id=&entity_id=1&city_id= HTTP/1.1" 500 207
+[06/Jun/2019 20:59:09] ERROR [django.request:228] Internal Server Error: /api/main/cart/get-object
+[06/Jun/2019 20:59:09] ERROR [django.server:154] "GET /api/main/cart/get-object?status= HTTP/1.1" 500 159
+[07/Jun/2019 11:20:20] ERROR [django.request:228] Internal Server Error: /api/main/cart/get-object
+[07/Jun/2019 11:20:20] ERROR [django.server:154] "GET /api/main/cart/get-object?status HTTP/1.1" 500 149
+[07/Jun/2019 11:34:36] ERROR [django.request:228] Internal Server Error: /api/main/pickup-request/get-list-object
+[07/Jun/2019 11:34:36] ERROR [django.server:154] "GET /api/main/pickup-request/get-list-object?status=PENDING&from_date&to_date&page_num=1&page_size=10 HTTP/1.1" 500 188
+[07/Jun/2019 11:41:56] ERROR [django.request:228] Internal Server Error: /api/main/pickup-request/get-list-object
+[07/Jun/2019 11:41:56] ERROR [django.server:154] "GET /api/main/pickup-request/get-list-object?status=PENDING&from_date&to_date&page_num=1&page_size=10 HTTP/1.1" 500 188
+[07/Jun/2019 11:42:26] ERROR [django.request:228] Internal Server Error: /api/main/pickup-request/get-list-object
+[07/Jun/2019 11:42:26] ERROR [django.server:154] "GET /api/main/pickup-request/get-list-object?status=PENDING&from_date&to_date&page_num=1&page_size=10 HTTP/1.1" 500 159
+[13/Jun/2019 09:08:13] ERROR [django.request:228] Internal Server Error: /api/pickup-request/add
+[13/Jun/2019 09:08:13] ERROR [django.server:154] "POST /api/pickup-request/add HTTP/1.1" 500 185
+[13/Jun/2019 09:09:09] ERROR [django.request:228] Internal Server Error: /api/pickup-request/add
+[13/Jun/2019 09:09:09] ERROR [django.server:154] "POST /api/pickup-request/add HTTP/1.1" 500 185
+[13/Jun/2019 09:16:35] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[13/Jun/2019 09:16:35] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 150
+[13/Jun/2019 09:20:28] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[13/Jun/2019 09:20:28] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 617
+[13/Jun/2019 09:40:08] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[13/Jun/2019 09:40:08] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 297
+[13/Jun/2019 09:42:47] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[13/Jun/2019 09:42:47] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 297
+[13/Jun/2019 09:47:46] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[13/Jun/2019 09:47:46] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 464
+[14/Jun/2019 12:40:13] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[14/Jun/2019 12:40:13] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 464
+[14/Jun/2019 12:42:05] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[14/Jun/2019 12:42:05] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 464
+[14/Jun/2019 12:43:06] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[14/Jun/2019 12:43:06] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 464
+[14/Jun/2019 12:48:30] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[14/Jun/2019 12:48:30] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 464
+[14/Jun/2019 13:00:09] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[14/Jun/2019 13:00:09] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 464
+[14/Jun/2019 13:14:48] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[14/Jun/2019 13:14:48] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 149
+[14/Jun/2019 14:22:31] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[14/Jun/2019 14:22:31] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 292
+[14/Jun/2019 14:24:45] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[14/Jun/2019 14:24:45] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 292
+[19/Jun/2019 09:49:02] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[19/Jun/2019 09:49:02] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 292
+[19/Jun/2019 10:03:46] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[19/Jun/2019 10:03:46] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 141
+[19/Jun/2019 10:53:42] ERROR [django.request:228] Internal Server Error: /api/main/cart/upload
+[19/Jun/2019 10:53:42] ERROR [django.server:154] "POST /api/main/cart/upload HTTP/1.1" 500 241
+[19/Jun/2019 11:04:11] ERROR [django.request:228] Internal Server Error: /api/main/cart/upload
+[19/Jun/2019 11:04:11] ERROR [django.server:154] "POST /api/main/cart/upload HTTP/1.1" 500 241
+[21/Jun/2019 14:56:16] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[21/Jun/2019 14:56:16] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 598
+[21/Jun/2019 14:58:10] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[21/Jun/2019 14:58:10] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 151
+[21/Jun/2019 14:59:28] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[21/Jun/2019 14:59:28] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 292
+[21/Jun/2019 15:06:07] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[21/Jun/2019 15:06:07] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 292
+[21/Jun/2019 15:06:57] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[21/Jun/2019 15:06:57] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 319
+[21/Jun/2019 15:09:40] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[21/Jun/2019 15:09:40] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 319
+[21/Jun/2019 15:54:25] ERROR [django.request:228] Internal Server Error: /api/main/cart/add
+[21/Jun/2019 15:54:25] ERROR [django.server:154] "POST /api/main/cart/add HTTP/1.1" 500 319
+[24/Jun/2019 11:58:11] ERROR [django.request:228] Internal Server Error: /api/main/user/update
+[24/Jun/2019 11:58:11] ERROR [django.server:154] "POST /api/main/user/update HTTP/1.1" 500 157
+[24/Jun/2019 11:58:37] ERROR [django.request:228] Internal Server Error: /api/main/user/update
+[24/Jun/2019 11:58:37] ERROR [django.server:154] "POST /api/main/user/update HTTP/1.1" 500 157
+[24/Jun/2019 12:05:48] ERROR [django.request:228] Internal Server Error: /api/main/user/update
+[24/Jun/2019 12:05:48] ERROR [django.server:154] "POST /api/main/user/update HTTP/1.1" 500 141
+[24/Jun/2019 12:11:50] ERROR [django.request:228] Internal Server Error: /api/main/user/update
+[24/Jun/2019 12:11:50] ERROR [django.server:154] "POST /api/main/user/update HTTP/1.1" 500 169
+[24/Jun/2019 12:18:18] ERROR [django.request:228] Internal Server Error: /api/main/user/update
+[24/Jun/2019 12:18:18] ERROR [django.server:154] "POST /api/main/user/update HTTP/1.1" 500 141
+[24/Jun/2019 12:18:18] ERROR [django.server:154] "POST /api/main/user/update HTTP/1.1" 500 59
+[24/Jun/2019 12:57:38] ERROR [django.request:228] Internal Server Error: /api/main/user/get-list-object-page
+[24/Jun/2019 12:57:38] ERROR [django.server:154] "GET /api/main/user/get-list-object-page?entity_id=1&user_id&is_hierarchy&is_direct&user_name_search_key&user_status&is_deleted&is_all_users&page_num=1&page_size=10 HTTP/1.1" 500 146
+[24/Jun/2019 13:01:46] ERROR [django.request:228] Internal Server Error: /api/main/user/get-list-object-page
